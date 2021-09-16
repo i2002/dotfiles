@@ -1,0 +1,9 @@
+[Unit]
+Description=Set system76-power default graphics mode
+
+[Service]
+ExecStart=/bin/bash /usr/local/bin/set-prime-discrete.sh
+Type=oneshot
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,106 @@
+{
+    "layer": "bottom",
+    "position": "top",
+    "height": 30,
+
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["tray", "custom/spotify", "backlight", "pulseaudio", "network", "sway/language", "battery", "clock"],
+    
+    // Modules configuration
+    "sway/mode": {
+        "format": " {}"
+    },
+    "sway/workspaces": {
+         "disable-scroll": true,
+         "all-outputs": true,
+         "format": "{name} - {icon}",
+         "format-icons": {
+             "1": "",
+             "2": "",
+             "3": "",
+             "4": "",
+             "5": "",
+             "urgent": "",
+             //"focused": "",
+             "default": ""
+         }
+    },
+    "sway/window": {
+        "max-length": 80,
+        "tooltip": false
+    },
+    "sway/language": {
+        "format":"{}"
+    },
+    "cpu": {
+        "format": "CPU: {usage}%",
+        "tooltip": false
+    },
+    "temperature": {
+        "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
+        "critical-threshold": 80,
+        "format": "{temperatureC}°C ",
+        "format-icons": ["", "", ""]
+    },
+    "clock": {
+        "format": "{:%a %d %b %H:%M}",
+        "tooltip": false
+    },
+    "battery": {
+        "format-alt": "{capacity}% {icon}",
+        "format": "{power:.2} W - {capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""],
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "interval": 30,
+        "states": {
+            "warning": 25,
+            "critical": 15
+        },
+        "tooltip": true,
+    },
+    "network": {
+        "format": "{icon}",
+        "format-wifi": "{essid} {icon}",
+        "format-linked": "(No IP} {icon}",
+        "format-icons": {
+            "wifi": [""],
+            "ethernet": [""],
+            "disconnected": [""]
+        },
+        "tooltip": true,
+        "tooltip-format-wifi": "{ipaddr} - {signalStrength}%",
+        "tooltip-format-ethernet": "{ifname} - {ipaddr}",
+        "tooptip-format-linked": "{ifname} (No IP)",
+        "on-click": "gnome-control-center wifi",
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon} {format_source}",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": [" "],
+            "default": ["", "", ""]
+        },
+        "format-source-muted": "",
+        "scroll-step": 1,
+        "on-click": "pavucontrol",
+        "tooltip": true
+    },
+    "custom/spotify": {
+        "interval": 1,
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/spotify.sh",
+        "exec-if": "pgrep spotify",
+        "escape": true
+    },
+    "backlight": {
+        "format": "{percent}% {icon}",
+        "format-icons": [""],
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 20
+    }
+}
+

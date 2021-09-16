@@ -1,0 +1,3 @@
+if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
+	QT_QPA_PLATFORM=wayland SDL_VIDEODRIVER=wayland XDG_SESSION_TYPE=wayland GDK_BACKEND=wayland exec sway
+fi

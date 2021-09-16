@@ -1,0 +1,8 @@
+{
+  "name": "System76 Power",
+  "description": "Show system76-power graphics status",
+  "uuid": "graphics-power@i2002.com",
+  "shell-version": [
+    "40"
+  ]
+}
