@@ -293,7 +293,7 @@ Salvare parole si chei ssh
 
 # Applications
 ## Utilities
-brasero, meld
+brasero, meld, keepassxc
 wine-staging, winetricks
 
 ## Programming
